@@ -1,13 +1,18 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import Footer from "./components/Footer";
+import Store from "./components/Store/Store";
+import About from "./components/About";
+import Cart from "./components/Cart/Cart";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Nav />
       <Hero />
-      <Footer />
+      <Store />
+      <About />
     </>
   );
 }

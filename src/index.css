@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   background: url("https://wallpapers.com/images/hd/1920x1080-hd-space-1383gsypn0zj5qmt.jpg");

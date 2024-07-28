@@ -14,7 +14,9 @@ const Hero = () => {
           Explore our vast selection of moons and planets. Find the perfect
           celestial body for your collection.
         </p>
-        <ShopButton />
+        <a href="#store">
+          <ShopButton />
+        </a>
       </section>
     </>
   );

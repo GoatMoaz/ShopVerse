@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Moon",
+        "price": 100.00,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/1200px-FullMoon2010.jpg",
+        "description": "The Moon is an astronomical body that orbits the Earth as its only natural satellite. It is the fifth-largest satellite in the Solar System."
+    },
+    {
+        "id": 2,
+        "name": "Mars",
+        "price": 200.00,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/1200px-OSIRIS_Mars_true_color.jpg",
+        "description": "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury."
+    },
+    {
+        "id": 3,
+        "name": "Jupiter",
+        "price": 399.99,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg/1200px-Jupiter_and_its_shrunken_Great_Red_Spot.jpg",
+        "description": "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun."
+    }
+]
