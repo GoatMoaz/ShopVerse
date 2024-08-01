@@ -14,15 +14,16 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  background: url("https://wallpapers.com/images/hd/1920x1080-hd-space-1383gsypn0zj5qmt.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left;
-  background-attachment: fixed;
 }
 
 @layer components {
   .link {
-    @apply px-4 py-2 hover:bg-[#35B5C2] hover:text-black transition-all cursor-pointer duration-300 rounded-xl;
+    @apply px-6 py-2 hover:bg-black transition-all cursor-pointer duration-300 rounded-full;
+  }
+
+  .logo {
+    background: linear-gradient(180deg, #ffffff, #4f46e5, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

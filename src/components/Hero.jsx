@@ -1,24 +1,25 @@
+import headphone from "../assets/headphone.png";
 import ShopButton from "./UI/Buttons/ShopButton";
 
 const Hero = () => {
   return (
-    <>
-      <section
-        id="hero"
-        className="container mx-auto flex flex-col justify-center items-center md:items-start h-screen"
-      >
-        <h1 className="font-bold text-center text-3xl min-[425px]:text-4xl md:text-left md:text-5xl text-slate-100">
-          Welcome to Planetary Plaza
+    <section className="pt-36 bg-gray-900 flex flex-col-reverse md:flex-row justify-center items-center px-4 md:px-8 pb-2">
+      <div className="text-center md:text-left flex flex-col items-center md:items-start gap-2">
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-slate-100 font-bold">
+          Welcome to ShopVerse
         </h1>
-        <p className="text-lg text-center md:text-left text-slate-300 mt-4 w-full md:w-1/2">
-          Explore our vast selection of moons and planets. Find the perfect
-          celestial body for your collection.
+        <p className="text-slate-300 text-lg xs:text-xl sm:text-2xl lg:text-3xl mt-2">
+          Your one-stop shop for all things tech and gadgets at the best prices
+          you can find. Shop now and get the best deals on the latest gadgets.
         </p>
-        <a href="#store">
-          <ShopButton />
-        </a>
-      </section>
-    </>
+        <ShopButton />
+      </div>
+      <img
+        src={headphone}
+        alt="hero"
+        className="w-4/5 md:w-2/5 z-10 object-cover "
+      />
+    </section>
   );
 };
 
