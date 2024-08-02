@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 
 @layer components {
   .link {
-    @apply px-6 py-2 hover:bg-black transition-all cursor-pointer duration-300 rounded-full;
+    @apply px-6 py-2 hover:bg-black transition-all hover:text-[#4f46e5] font-bold cursor-pointer duration-300 rounded-full;
   }
 
   .logo {

@@ -1,6 +1,8 @@
 import Cart from "./UI/Cart";
 import { useState } from "react";
 import CartDialog from "./CartDialog";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import NavMenu from "./NavMenu";
 
 const products = [
   {
@@ -30,20 +32,39 @@ const products = [
   // More products...
 ];
 const Nav = () => {
-  const [open, setOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const clickHandler = () => {
-    setOpen(true);
+  const cartHandler = () => {
+    setCartOpen(true);
+  };
+
+  const menuHandler = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
     <>
-      <nav className="w-full backdrop-blur-lg fixed top-0 shadow-xl z-20">
-        <div className="flex flex-col justify-between items-center rounded-md px-4 py-2 w-full md:w-5/6 sm:flex-row mx-auto">
+      <nav className="w-full bg-indigo-950 fixed top-0 shadow-xl z-20">
+        <div className="flex justify-between items-center rounded-md px-4 py-2 w-full md:w-5/6 mx-auto">
           <a href="/">
-            <h1 className="text-3xl text-slate-200 font-bold logo">ShopVerse</h1>
+            <h1 className="text-3xl text-slate-200 font-bold logo">
+              ShopVerse
+            </h1>
           </a>
-          <div className="flex justify-center items-center gap-4 text-slate-200">
+          <div className="md:hidden flex items-center gap-4 cursor-pointer text-slate-200">
+            <div onClick={cartHandler}>
+              <Cart />
+            </div>
+            {!menuOpen && (
+              <Bars3Icon className="h-6 w-6" onClick={menuHandler} />
+            )}
+            {menuOpen && (
+              <XMarkIcon className="h-6 w-6" onClick={menuHandler} />
+            )}
+          </div>
+
+          <div className="md:flex justify-center hidden items-center gap-4 text-slate-200">
             <a href="#" className="link">
               About
             </a>
@@ -54,8 +75,11 @@ const Nav = () => {
               Categories
             </a>
           </div>
-          <div className="flex justify-center items-center gap-4 text-slate-200">
-            <div onClick={clickHandler} className="cursor-pointer">
+
+          <NavMenu open={menuOpen} setMenu={menuHandler} />
+
+          <div className="md:flex hidden justify-center items-center gap-4 text-slate-200">
+            <div onClick={cartHandler} className="cursor-pointer">
               <Cart />
             </div>
             <a
@@ -67,7 +91,7 @@ const Nav = () => {
           </div>
         </div>
       </nav>
-      <CartDialog open={open} setOpen={setOpen} products={products} />
+      <CartDialog open={cartOpen} setOpen={setCartOpen} products={products} />
     </>
   );
 };
