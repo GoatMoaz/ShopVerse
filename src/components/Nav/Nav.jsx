@@ -1,8 +1,10 @@
-import Cart from "./UI/Cart";
+import Cart from "../UI/Cart";
 import { useState } from "react";
-import CartDialog from "./CartDialog";
+import CartDialog from "../CartDialog";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavMenu from "./NavMenu";
+
+import {  NavLink } from "react-router-dom";
 
 const products = [
   {
@@ -29,7 +31,6 @@ const products = [
     imageAlt:
       "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
   },
-  // More products...
 ];
 const Nav = () => {
   const [cartOpen, setCartOpen] = useState(false);
@@ -45,13 +46,13 @@ const Nav = () => {
 
   return (
     <>
-      <nav className="w-full bg-indigo-950 fixed top-0 shadow-xl z-20">
+      <nav className="w-full backdrop-blur-lg bg-slate-900 bg-opacity-60 fixed top-0 shadow-xl z-20">
         <div className="flex justify-between items-center rounded-md px-4 py-2 w-full md:w-5/6 mx-auto">
-          <a href="/">
+          <NavLink to="/">
             <h1 className="text-3xl text-slate-200 font-bold logo">
               ShopVerse
             </h1>
-          </a>
+          </NavLink>
           <div className="md:hidden flex items-center gap-4 cursor-pointer text-slate-200">
             <div onClick={cartHandler}>
               <Cart />
@@ -65,15 +66,15 @@ const Nav = () => {
           </div>
 
           <div className="md:flex justify-center hidden items-center gap-4 text-slate-200">
-            <a href="#" className="link">
+            <NavLink to="/about" className="link">
               About
-            </a>
-            <a href="#" className="link">
+            </NavLink>
+            <NavLink to="/shop" className="link">
               Shop
-            </a>
-            <a href="#" className="link">
+            </NavLink>
+            <NavLink to="/categories" className="link">
               Categories
-            </a>
+            </NavLink>
           </div>
 
           <NavMenu open={menuOpen} setMenu={menuHandler} />
@@ -82,12 +83,12 @@ const Nav = () => {
             <div onClick={cartHandler} className="cursor-pointer">
               <Cart />
             </div>
-            <a
-              href="#"
-              className="bg-slate-950 rounded-2xl px-6 py-2 hover:bg-black transition-all duration-300"
+            <NavLink
+              to="/login"
+              className="bg-indigo-600 rounded-2xl px-6 py-2 hover:bg-indigo-800 transition-all duration-300"
             >
               Login
-            </a>
+            </NavLink>
           </div>
         </div>
       </nav>

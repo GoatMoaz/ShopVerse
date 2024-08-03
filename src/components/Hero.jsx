@@ -19,11 +19,7 @@ const Hero = () => {
         </Slide>
       </div>
       <Slide duration={1300} triggerOnce direction="right">
-        <img
-          src={headphone}
-          alt="hero"
-          className="w-4/5 z-10 object-cover "
-        />
+        <img src={headphone} alt="hero" className="w-4/5 z-10 object-cover " />
       </Slide>
     </section>
   );

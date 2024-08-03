@@ -17,13 +17,25 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.header {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3))
+      no-repeat fixed,
+    url(https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&w=5374&h=3583&dpr=1)
+      no-repeat center center fixed;
+  background-size: cover;
+}
+
 @layer components {
   .link {
     @apply px-6 py-2 hover:bg-black transition-all hover:text-[#4f46e5] font-bold cursor-pointer duration-300 rounded-full;
   }
 
+  .link.active {
+    @apply bg-black text-[#4f46e5];
+  }
+
   .logo {
-    background: linear-gradient(180deg, #ffffff, #4f46e5, #000000);
+    background: linear-gradient(270deg, #ffffff, #4f46e5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
