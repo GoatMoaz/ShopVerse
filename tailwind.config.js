@@ -1,7 +1,13 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
-    extend: {},
+    extend: {
+      flex: {
+        2: "0 0 50%",
+        3: "3 3 0%",
+        4: "4 4 0%",
+      },
+    },
     screens: {
       xs: "375px",
       sm: "425px",

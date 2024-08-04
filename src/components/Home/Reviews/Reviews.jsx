@@ -1,7 +1,7 @@
 import Review from "./Review";
-import user1 from "../../assets/user1.png";
-import user2 from "../../assets/user2.png";
-import user3 from "../../assets/user3.png";
+import user1 from "../../../assets/user1.png";
+import user2 from "../../../assets/user2.png";
+import user3 from "../../../assets/user3.png";
 
 import { Slide } from "react-awesome-reveal";
 
@@ -47,7 +47,14 @@ const Reviews = () => {
       <h1 className="text-3xl sm:text-4xl text-blue-950 font-bold text-center">
         Most recent reviews
       </h1>
-      <Slide duration={1300} triggerOnce direction="right" cascade damping={0.1} fraction={0.6}>
+      <Slide
+        duration={1300}
+        triggerOnce
+        direction="right"
+        cascade
+        damping={0.1}
+        fraction={0.6}
+      >
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           <Review review={reviews[0]} />
           <Review review={reviews[1]} />

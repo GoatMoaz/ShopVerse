@@ -1,3 +1,5 @@
+import Modal from "../UI/Modal";
+
 const Header = () => {
   return (
     <header className="header h-[500px] flex flex-col justify-center items-center">

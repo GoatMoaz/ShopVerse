@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .header {
@@ -25,9 +25,21 @@ body {
   background-size: cover;
 }
 
+.slick-next:before,
+.slick-prev:before {
+  color: #4f46e5;
+}
+
+@media (max-width: 768px) {
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
+}
+
 @layer components {
   .link {
-    @apply px-6 py-2 hover:bg-black transition-all hover:text-[#4f46e5] font-bold cursor-pointer duration-300 rounded-full;
+    @apply px-6 py-2 hover:bg-black transition-all hover:text-[#4f46e5] cursor-pointer duration-300 rounded-full;
   }
 
   .link.active {

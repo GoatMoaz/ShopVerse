@@ -1,35 +1,23 @@
-import Features from "./components/Features";
-import Hero from "./components/Hero";
-import Nav from "./components/Nav/Nav";
-import Contact from "./components/Contact";
-import Reviews from "./components/Reviews/Reviews";
-import Categories from "./components/Categories/Categories";
-import Footer from "./components/Footer/Footer";
+import Nav from "./components/Layout/Nav/Nav";
+import Footer from "./components/Layout/Footer/Footer";
 import Shop from "./components/Shop/Shop";
+import Home from "./components/Home/Home";
+import Error from "./components/Error/Error";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Categories from "./components/Categories/Categories";
 
 function App() {
   return (
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route
-          index
-          element={
-            <>
-              <Hero />
-              <Features />
-              <Categories />
-              <Reviews />
-              <Contact />
-              <Footer />
-            </>
-          }
-        />
-
+        <Route index element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

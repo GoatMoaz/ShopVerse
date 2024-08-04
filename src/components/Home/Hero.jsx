@@ -1,6 +1,8 @@
-import headphone from "../assets/headphone.png";
-import ShopButton from "./UI/Buttons/ShopButton";
+import headphone from "../../assets/headphone.png";
+import ShopButton from "../UI/Buttons/ShopButton";
 import { Slide } from "react-awesome-reveal";
+
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -15,11 +17,13 @@ const Hero = () => {
             prices you can find. Shop now and get the best deals on the latest
             gadgets.
           </p>
-          <ShopButton />
+          <NavLink to="/shop">
+            <ShopButton />
+          </NavLink>
         </Slide>
       </div>
       <Slide duration={1300} triggerOnce direction="right">
-        <img src={headphone} alt="hero" className="w-4/5 z-10 object-cover " />
+        <img src={headphone} alt="hero" className="w-4/5 z-10 object-cover" />
       </Slide>
     </section>
   );

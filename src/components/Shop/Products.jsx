@@ -41,12 +41,13 @@ const Products = () => {
       {!loading && (
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <div className="flex justify-between flex-col sm:flex-row-reverse mb-5">
-            <select className="p-2 border border-gray-300 cursor-pointer rounded-lg">
-              <option value="all">All</option>
+            <select className="border text-white text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 bg-gray-700 border-gray-600 md:w-1/4 sm:w-2/5">
+              <option>All</option>
               <option value="Tech">Tech</option>
-              <option value="Clothes">Clothes</option>
-              <option value="Furnitures">Furnitures</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Accessories">Accessories</option>
               <option value="Shoes">Shoes</option>
+              <option value="Furnitures">Furnitures</option>
             </select>
             <h2 className="text-2xl text-center sm:text-left font-extrabold tracking-tight text-gray-800">
               Trending Products

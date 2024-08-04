@@ -1,4 +1,4 @@
-import Rating from "../UI/Rating/Rating";
+import Rating from "../../UI/Rating/Rating";
 
 const Review = (props) => {
   return (
