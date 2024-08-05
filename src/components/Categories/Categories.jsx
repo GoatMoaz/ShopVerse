@@ -3,45 +3,39 @@ import AllCategories from "./AllCategories";
 import ShoesCategory from "./ShoesCategory";
 import FurnituresCategory from "./FurnituresCategory";
 import ElectronicsCategory from "./ElectronicsCategory";
+import useFetchData from "../../hooks/use-fetch-data";
+import Loader from "../UI/Loader/Loader";
 
 const Categories = () => {
-  const products = [];
   const [shoesProducts, setShoesProducts] = useState([]);
   const [furnituresProducts, setFurnituresProducts] = useState([]);
   const [electronicsProducts, setElectronicsProducts] = useState([]);
 
-  const fetchProducts = async () => {
-    const response = await fetch(
-      "https://shopverse-909e1-default-rtdb.firebaseio.com/products.json"
-    );
-    const data = await response.json();
-    for (const key in data) {
-      const product = {
-        id: key,
-        ...data[key],
-      };
-      products.push(product);
-    }
-
-    setElectronicsProducts(
-      products.filter((product) => product.category.name === "Electronics")
-    );
-
-    setFurnituresProducts(
-      products.filter((product) => product.category.name === "Furniture")
-    );
-
-    setShoesProducts(
-      products.filter((product) => product.category.name === "Shoes")
-    );
-  };
+  const { products, loading, fetchProducts } = useFetchData();
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
+  useEffect(() => {
+    if (products) {
+      setFurnituresProducts(
+        products.filter((product) => product.category.name === "Furniture")
+      );
+
+      setShoesProducts(
+        products.filter((product) => product.category.name === "Shoes")
+      );
+
+      setElectronicsProducts(
+        products.filter((product) => product.category.name === "Electronics")
+      );
+    }
+  }, [products]);
+
   return (
     <>
+      {loading && <Loader />}
       <AllCategories />
       <FurnituresCategory products={furnituresProducts} />
       <ShoesCategory products={shoesProducts} />
