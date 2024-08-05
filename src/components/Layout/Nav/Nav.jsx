@@ -67,7 +67,7 @@ const Nav = () => {
 
           <div className="md:flex justify-center hidden items-center gap-4 text-slate-200">
             <NavLink to="/about" className="link">
-              About
+              About us
             </NavLink>
             <NavLink to="/shop" className="link">
               Shop

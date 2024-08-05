@@ -10,7 +10,7 @@ const NavMenu = (props) => {
     >
       <div className="flex flex-col items-center text-white bg-slate-900 bg-opacity-65 justify-center h-full gap-8">
         <Link to="/about" className="link ">
-          About
+          About us
         </Link>
         <Link to="/shop" className="link">
           Shop
