@@ -1,6 +1,6 @@
-const Category = ({ category }) => {
+const Category = ({ category, onNavigate }) => {
   return (
-    <li className="overflow-hidden">
+    <li className="overflow-hidden" onClick={() => onNavigate(category.name)}>
       <img
         src={category.image}
         alt={category.name}

@@ -1,7 +1,13 @@
 import Category from "./Category";
 import { Slide } from "react-awesome-reveal";
+import { useNavigate } from "react-router-dom";
 
 const Categories = () => {
+  const navigate = useNavigate();
+
+  const categoryClickHandler = (category) => {
+    navigate(`/shop?category=${category}`);
+  };
   return (
     <section className="bg-white py-16 px-2 sm:px-8">
       <h1 className="text-base text-center font-semibold leading-7 text-indigo-600">
@@ -18,6 +24,7 @@ const Categories = () => {
                 "https://images.pexels.com/photos/45982/pexels-photo-45982.jpeg?auto=compress&cs=tinysrgb&w=600",
               name: "Clothes",
             }}
+            onNavigate={categoryClickHandler}
           />
           <Category
             category={{
@@ -25,14 +32,15 @@ const Categories = () => {
                 "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=600",
               name: "Electronics",
             }}
+            onNavigate={categoryClickHandler}
           />
-
           <Category
             category={{
               image:
                 "https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=600",
-              name: "Furnitures",
+              name: "Furniture",
             }}
+            onNavigate={categoryClickHandler}
           />
           <Category
             category={{
@@ -40,6 +48,7 @@ const Categories = () => {
                 "https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=600",
               name: "Shoes",
             }}
+            onNavigate={categoryClickHandler}
           />
         </ul>
       </Slide>

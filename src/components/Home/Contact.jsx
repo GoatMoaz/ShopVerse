@@ -3,12 +3,7 @@ import { Zoom } from "react-awesome-reveal";
 const Contact = () => {
   return (
     <section className="bg-[#e4ebfd] py-8">
-      <Zoom
-       duration={700}
-       triggerOnce
-       fraction={0.3}
-       
-      >
+      <Zoom duration={700} triggerOnce fraction={0.3}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-base font-semibold leading-7 text-indigo-600">

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import { Fade } from "react-awesome-reveal";
 
@@ -30,8 +30,16 @@ const categories = [
 ];
 
 const AllCategories = () => {
+  const navigate = useNavigate();
+  const categoryClickHandler = (category) => {
+    if (category === "Accessories") {
+      category = "Miscellaneous";
+    }
+    navigate(`/shop?category=${category}`);
+  };
+
   return (
-    <section className="bg-sky-50 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-0 lg:px-4 pt-12 lg:pt-20 pb-0 lg:pb-4 gap-0 lg:gap-4">
+    <section className="bg-slate-600 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-12 md:pt-14">
       <Fade
         triggerOnce
         duration={700}
@@ -60,7 +68,7 @@ const AllCategories = () => {
         </div>
       </Fade>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-4 col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 col-span-2">
         {categories.map((category, index) => (
           <Fade
             triggerOnce
@@ -74,6 +82,7 @@ const AllCategories = () => {
             <div
               className="absolute inset-0 bg-black text-white bg-opacity-50 flex items-center justify-center transition duration-300 ease-in-out hover:bg-opacity-0 group
             "
+              onClick={() => categoryClickHandler(category.title)}
             >
               <div className="text-center group-hover:hidden">
                 <h2 className="text-2xl font-bold mb-2">{category.title}</h2>
