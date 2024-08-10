@@ -4,32 +4,48 @@ const useFetchData = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchProducts = async () => {
+  const fetchProducts = async (id = null) => {
     try {
       setLoading(true);
+      let response;
+      if (!id) {
+        response = await fetch(
+          "https://shopverse-909e1-default-rtdb.firebaseio.com/products.json"
+        );
 
-      const response = await fetch(
-        "https://shopverse-909e1-default-rtdb.firebaseio.com/products.json"
-      );
-      const data = await response.json();
-      const products = [];
+        const data = await response.json();
 
-      for (const key in data) {
+        const products = [];
+
+        for (const key in data) {
+          const product = {
+            firebaseId: key,
+            ...data[key],
+          };
+          products.push(product);
+        }
+        setProducts(products);
+      } else {
+        response = await fetch(
+          `https://shopverse-909e1-default-rtdb.firebaseio.com/products/${id}.json`
+        );
+
+        const data = await response.json();
+
         const product = {
-          id: key,
-          ...data[key],
+          firebaseId: id,
+          ...data,
         };
-        products.push(product);
+        setProducts([product]);
       }
 
-      setProducts(products);
       setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
-    return { products, loading, fetchProducts };
+  return { products, loading, fetchProducts };
 };
 
 export default useFetchData;

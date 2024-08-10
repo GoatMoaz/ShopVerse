@@ -25,9 +25,10 @@ body {
   background-size: cover;
 }
 
-.slick-next:before,
-.slick-prev:before {
-  color: #4f46e5;
+
+.image.slick-dots li {
+  width: 90px;
+  height: 5px;
 }
 
 @media (max-width: 768px) {

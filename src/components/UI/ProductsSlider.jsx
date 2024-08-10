@@ -50,7 +50,7 @@ const ProductsSlider = ({ products }) => {
               <p className="text-[18px] sm:text-lg">${product.price}.00</p>
             </div>
             <div className="flex justify-center mt-4">
-              <DetailsButton />
+              <DetailsButton id={product.firebaseId}/>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@ function SampleNextArrow(props) {
       className={className}
       style={{
         ...style,
-        background: "white",
+        background: "#4f46e5",
 
         borderRadius: "9999px",
       }}
@@ -82,7 +82,7 @@ function SamplePrevArrow(props) {
       className={className}
       style={{
         ...style,
-        background: "white",
+        background: "#4f46e5",
         borderRadius: "9999px",
       }}
       onClick={onClick}
