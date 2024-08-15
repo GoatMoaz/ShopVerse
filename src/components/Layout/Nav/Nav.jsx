@@ -1,99 +1,83 @@
-import Cart from "../../UI/Cart";
 import { useState } from "react";
-import CartDialog from "../Cart/CartDialog";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import NavMenu from "./NavMenu";
 
 import { NavLink } from "react-router-dom";
 
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-];
 const Nav = () => {
-  const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const cartHandler = () => {
-    setCartOpen(true);
-  };
 
   const menuHandler = () => {
     setMenuOpen(!menuOpen);
   };
 
   return (
-    <>
-      <nav className="w-full backdrop-blur-lg bg-slate-950 bg-opacity-70 fixed top-0 shadow-xl z-20">
-        <div className="flex justify-between items-center rounded-md px-4 py-2 w-full lg:w-5/6 mx-auto">
-          <NavLink to="/">
-            <h1 className="text-3xl text-slate-200 font-bold logo">
-              ShopVerse
-            </h1>
-          </NavLink>
-          <div className="md:hidden flex items-center gap-4 cursor-pointer text-slate-200">
-            <div onClick={cartHandler}>
-              <Cart />
-            </div>
-            {!menuOpen && (
-              <Bars3Icon className="h-6 w-6" onClick={menuHandler} />
-            )}
-            {menuOpen && (
-              <XMarkIcon className="h-6 w-6" onClick={menuHandler} />
-            )}
-          </div>
-
-          <div className="md:flex justify-center hidden items-center gap-4 text-slate-200">
-            <NavLink to="/about" className="link">
-              About us
-            </NavLink>
-            <NavLink to="/shop" className="link">
-              Shop
-            </NavLink>
-            <NavLink to="/categories" className="link">
-              Categories
-            </NavLink>
-          </div>
-
-          <NavMenu open={menuOpen} setMenu={menuHandler} />
-
-          <div className="md:flex hidden justify-center items-center gap-4 text-slate-200">
-            <div onClick={cartHandler} className="cursor-pointer">
-              <Cart />
-            </div>
-            <NavLink
-              to="/login"
-              className="bg-indigo-600 rounded-2xl px-6 py-2 hover:bg-indigo-800 transition-all duration-300"
-            >
-              Login
-            </NavLink>
-          </div>
+    <nav className="bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-600">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <NavLink to="/" className="flex items-center space-x-3 ">
+          <img src="./logo.png" className="h-8" alt="Flowbite Logo" />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
+            ShopVerse
+          </span>
+        </NavLink>
+        <div className="flex md:order-2 space-x-3 md:space-x-0 ">
+          <button
+            type="button"
+            className="text-white focus:ring-4 focus:outline-none hidden md:block font-medium rounded-lg text-sm px-4 py-2 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+          >
+            Get started
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            className="inline-flex items-center p-2 w-12 h-10 justify-center text-sm rounded-lg md:hidden text-gray-400"
+            aria-controls="navbar-sticky"
+            aria-expanded={menuOpen ? "true" : "false"}
+            onClick={menuHandler}
+          >
+            {menuOpen ? <XMarkIcon /> : <Bars3Icon />}
+          </button>
         </div>
-      </nav>
-      <CartDialog open={cartOpen} setOpen={setCartOpen} products={products} />
-    </>
+        <div
+          className={`items-center justify-between w-full md:w-auto md:order-1 overflow-hidden transition-max-height duration-500 ease-in-out ${
+            menuOpen
+              ? "max-h-screen md:max-h-full md:flex"
+              : "max-h-0 md:flex md:max-h-full"
+          }`}
+          id="navbar-sticky"
+        >
+          <ul className="flex flex-col py-4 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700">
+            <li>
+              <NavLink to="/" className="link">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" className="link">
+                About us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/shop" className="link">
+                Shop
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/categories" className="link">
+                Categories
+              </NavLink>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="text-white focus:ring-4 focus:outline-none block md:hidden font-medium rounded-lg text-sm px-4 mx-2 mt-2 py-2 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+              >
+                Get started
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 

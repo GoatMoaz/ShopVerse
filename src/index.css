@@ -25,7 +25,6 @@ body {
   background-size: cover;
 }
 
-
 .image.slick-dots li {
   width: 90px;
   height: 5px;
@@ -40,11 +39,36 @@ body {
 
 @layer components {
   .link {
-    @apply px-6 py-2 hover:bg-black transition-all hover:text-[#4f46e5] cursor-pointer duration-300 rounded-full;
+    position: relative;
+    @apply block py-2 px-3 rounded md:p-0 md:hover:text-blue-500 text-white md:hover:bg-transparent text-lg border-gray-700;
+  }
+
+  .link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: rgb(59, 130, 246);
+    transition: width 0.3s ease;
+  }
+
+  .link:hover::after,
+  .link.active::after {
+    width: 100%;
   }
 
   .link.active {
-    @apply bg-black text-[#4f46e5];
+    @apply text-blue-500 bg-black bg-opacity-55 border-l-4 border-blue-500 rounded-none md:bg-transparent md:border-l-0;
+  }
+
+  @media (max-width: 768px) {
+    .link::after,
+    .link:hover::after,
+    .link.active::after {
+      display: none;
+    }
   }
 
   .logo {
