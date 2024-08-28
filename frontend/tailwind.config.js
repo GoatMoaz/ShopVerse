@@ -16,7 +16,5 @@ export default {
       xl: "1280px",
     },
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };

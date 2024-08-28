@@ -20,12 +20,15 @@ const Nav = () => {
           </span>
         </NavLink>
         <div className="flex md:order-2 space-x-3 md:space-x-0 ">
-          <button
-            type="button"
-            className="text-white focus:ring-4 focus:outline-none hidden md:block font-medium rounded-lg text-sm px-4 py-2 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-          >
-            Get started
-          </button>
+          <NavLink to="/login">
+            <button
+              type="button"
+              className="text-white focus:ring-4 focus:outline-none hidden md:block font-medium rounded-lg text-sm px-4 py-2 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+            >
+              Get started
+            </button>
+          </NavLink>
+
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
