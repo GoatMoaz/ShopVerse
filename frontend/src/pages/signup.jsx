@@ -170,11 +170,11 @@ const SignupPage = () => {
 
                   <span className="text-sm text-gray-700">
                     By creating an account, you agree to our{" "}
-                    <a href="#" className="text-gray-700 underline">
+                    <a href="#" className="text-indigo-700 underline">
                       terms and conditions{" "}
                     </a>
                     and{" "}
-                    <a href="#" className="text-gray-700 underline">
+                    <a href="#" className="text-indigo-700 underline">
                       privacy policy
                     </a>
                   </span>
@@ -182,13 +182,13 @@ const SignupPage = () => {
               </div>
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                <button className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
+                <button className="inline-block shrink-0 rounded-md border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500">
                   Create an account
                 </button>
 
                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                   Already have an account?{" "}
-                  <Link to="/login" className="text-gray-700 underline">
+                  <Link to="/login" className="text-indigo-700 underline">
                     Log in
                   </Link>
                   .
