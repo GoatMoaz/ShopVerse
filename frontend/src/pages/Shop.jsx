@@ -1,7 +1,7 @@
 import Header from "../components/Shop/Header";
 import Products from "../components/Shop/Products";
 import useFetchData from "../hooks/use-fetch-data";
-import ProductsLoader from "../components/UI/Loader/ProductsLoader";
+import ProductsLoader from "../components/UI/Loaders/ProductsLoader";
 import { useEffect, useState } from "react";
 
 import { useLocation } from "react-router-dom";

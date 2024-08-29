@@ -3,7 +3,7 @@ import useFetchData from "../hooks/use-fetch-data";
 import { useEffect } from "react";
 import Slider from "react-slick";
 import AddToCartButton from "../components/UI/Buttons/AddToCartButton";
-import ProductDetailsLoader from "../components/UI/Loader/ProductDetailsLoader";
+import ProductDetailsLoader from "../components/UI/Loaders/ProductDetailsLoader";
 
 const ProductDetailsPage = () => {
   const location = useLocation();

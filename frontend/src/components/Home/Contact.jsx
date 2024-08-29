@@ -1,5 +1,5 @@
 import { Zoom } from "react-awesome-reveal";
-import ContactInput from "../UI/ContactInput/ContactInput";
+import ContactInput from "../UI/Inputs/ContactInput";
 
 const Contact = () => {
   return (

@@ -4,7 +4,7 @@ import ShoesCategory from "../components/Categories/ShoesCategory";
 import FurnituresCategory from "../components/Categories/FurnituresCategory";
 import ElectronicsCategory from "../components/Categories/ElectronicsCategory";
 import useFetchData from "../hooks/use-fetch-data";
-import Loader from "../components/UI/Loader/Loader";
+import Loader from "../components/UI/Loaders/Loader";
 
 const CategoriesPage = () => {
   const [shoesProducts, setShoesProducts] = useState([]);
