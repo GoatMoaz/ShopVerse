@@ -2,7 +2,9 @@ import { useState } from "react";
 
 const useFetchData = () => {
   const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const fetchProducts = async (id = null, category = null) => {
     try {
@@ -17,11 +19,15 @@ const useFetchData = () => {
       } else if (id) {
         response = await fetch(`http://localhost:3000/products/${id}`);
 
+        if (!response.ok) {
+          setError("Failed to fetch product.");
+          setLoading(false);
+          return;
+        }
+
         const data = await response.json();
 
-        const product = data.product;
-
-        setProducts([product]);
+        setProduct(data.product);
       } else if (category) {
         response = await fetch(
           `http://localhost:3000/products/category/${category}`
@@ -38,7 +44,7 @@ const useFetchData = () => {
     }
   };
 
-  return { products, loading, fetchProducts };
+  return { products, loading, fetchProducts, error, product };
 };
 
 export default useFetchData;

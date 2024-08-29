@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import Slider from "react-slick";
 import AddToCartButton from "../components/UI/Buttons/AddToCartButton";
 import ProductDetailsLoader from "../components/UI/Loaders/ProductDetailsLoader";
+import ErrorPage from "./Error";
 
 const ProductDetailsPage = () => {
   const location = useLocation();
   const pathname = location.pathname;
   const id = pathname.split("/")[2];
-  const { products, loading, fetchProducts } = useFetchData();
-  const product = products[0];
+  const { product, loading, fetchProducts, error } = useFetchData();
 
   useEffect(() => {
     fetchProducts(id);
@@ -55,6 +55,7 @@ const ProductDetailsPage = () => {
   return (
     <>
       {loading && <ProductDetailsLoader />}
+      {error && <ErrorPage />}
       {product && (
         <section className="bg-sky-50 py-24 px-4 md:px-0">
           <div className="container mx-auto border-2 border-white gap-2 sm:gap-32 md:gap-0 pb-4 md:pb-32 bg-white shadow-xl rounded-lg pt-4 px-4 grid grid-cols-1 md:grid-cols-2">
