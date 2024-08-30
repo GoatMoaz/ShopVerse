@@ -6,7 +6,7 @@ const ProductContent = ({ product }) => {
       <h2 className="text-xl sm:text-2xl font-bold">{product.title}</h2>
       <p className="text-sm sm:text-lg">{product.description}</p>
       <p className="text-xl sm:text-2xl text-indigo-600 font-semibold">
-        ${product.price}
+        ${product.price.toFixed(2)}
       </p>
       <AddToCartButton />
     </div>

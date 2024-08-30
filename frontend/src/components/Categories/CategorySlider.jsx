@@ -47,10 +47,12 @@ const ProductsSlider = ({ products }) => {
               <h3 className="text-lg sm:text-xl font-bold line-clamp-2 sm:line-clamp-1">
                 {product.title}
               </h3>
-              <p className="text-[18px] sm:text-lg">${product.price}</p>
+              <p className="text-[18px] sm:text-lg">
+                ${product.price.toFixed(2)}
+              </p>
             </div>
             <div className="flex justify-center mt-4">
-              <DetailsButton id={product._id}/>
+              <DetailsButton id={product._id} />
             </div>
           </div>
         </div>
