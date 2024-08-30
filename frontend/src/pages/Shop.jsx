@@ -28,7 +28,7 @@ const ShopPage = () => {
     <>
       <Header />
       {loading && <ProductsLoader />}
-      <Products products={products} category={category} />
+      {!loading && <Products products={products} category={category} />}
     </>
   );
 };
