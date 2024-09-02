@@ -10,20 +10,29 @@ import SignupPage from "./pages/signup";
 import LoginPage from "./pages/login";
 import Root from "./pages/Root";
 
+import { loader as PDLoader } from "./pages/ProductDetails";
+import { loader as CategoriesLoader } from "./pages/Categories";
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage />,
+    errorElement: (
+      <ErrorPage
+        status={404}
+        message="Page not found. Please go back to home."
+      />
+    ),
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/about", element: <AboutPage /> },
       { path: "/shop", element: <ShopPage /> },
+      { path: "/shop/:id", element: <ProductDetailsPage />, loader: PDLoader },
       {
-        path: "/shop/:id",
-        element: <ProductDetailsPage />,
+        path: "/categories",
+        element: <CategoriesPage />,
+        loader: CategoriesLoader,
       },
-      { path: "/categories", element: <CategoriesPage /> },
     ],
   },
   {

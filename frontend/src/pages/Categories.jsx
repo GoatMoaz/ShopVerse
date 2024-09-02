@@ -3,19 +3,15 @@ import AllCategories from "../components/Categories/AllCategories";
 import ShoesCategory from "../components/Categories/ShoesCategory";
 import FurnituresCategory from "../components/Categories/FurnituresCategory";
 import ElectronicsCategory from "../components/Categories/ElectronicsCategory";
-import useFetchData from "../hooks/use-fetch-data";
-import Loader from "../components/UI/Loaders/Loader";
+
+import { useLoaderData } from "react-router-dom";
 
 const CategoriesPage = () => {
   const [shoesProducts, setShoesProducts] = useState([]);
   const [furnituresProducts, setFurnituresProducts] = useState([]);
   const [electronicsProducts, setElectronicsProducts] = useState([]);
 
-  const { products, loading, fetchProducts } = useFetchData();
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  const { products } = useLoaderData();
 
   useEffect(() => {
     if (products) {
@@ -35,7 +31,6 @@ const CategoriesPage = () => {
 
   return (
     <>
-      {loading && <Loader />}
       <AllCategories />
       <FurnituresCategory products={furnituresProducts} />
       <ShoesCategory products={shoesProducts} />
@@ -45,3 +40,12 @@ const CategoriesPage = () => {
 };
 
 export default CategoriesPage;
+
+export async function loader() {
+  const response = await fetch("http://localhost:3000/products");
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch products.");
+  }
+  return response;
+}

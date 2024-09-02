@@ -18,7 +18,7 @@ const Products = ({ products, category }) => {
       <div className="mx-auto max-w-2xl px-4 py-5 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <div className="flex justify-between items-center gap-2 flex-col sm:flex-row-reverse mb-5">
           <select
-            className="border text-white text-md rounded-lg focus:ring-blue-500 cursor-pointer focus:border-blue-500 w-full p-2.5 bg-gray-700 border-gray-600 md:w-1/4 sm:w-2/5"
+            className="border text-white text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 bg-gray-700 border-gray-600 md:w-1/4 sm:w-2/5"
             value={category}
             onChange={changeHandler}
           >
