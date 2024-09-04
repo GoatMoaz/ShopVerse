@@ -8,7 +8,9 @@ import CategoriesPage from "./pages/Categories";
 import ErrorPage from "./pages/Error";
 import SignupPage from "./pages/signup";
 import LoginPage from "./pages/login";
+
 import Root from "./pages/Root";
+import LoginRoot from "./pages/LoginRoot";
 
 import { loader as PDLoader } from "./pages/ProductDetails";
 import { loader as CategoriesLoader } from "./pages/Categories";
@@ -36,12 +38,18 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/signup",
-    element: <SignupPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
+    path: "",
+    element: <LoginRoot />,
+    children: [
+      {
+        path: "/signup",
+        element: <SignupPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+    ],
   },
 ]);
 
