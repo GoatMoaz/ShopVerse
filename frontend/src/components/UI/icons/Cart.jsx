@@ -1,12 +1,15 @@
+import { useSelector } from "react-redux";
+
 const Cart = () => {
+  const totalQuantity = useSelector((state) => state.totalQuantity);
   return (
-    <div className="relative scale-75">
+    <div className="relative scale-75 cursor-pointer">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth="1.5"
-        stroke="currentColor"
+        stroke="white"
         className="h-8 w-8"
       >
         <path
@@ -16,7 +19,7 @@ const Cart = () => {
         />
       </svg>
       <span className="absolute -top-2 left-4 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50">
-        0
+        {totalQuantity}
       </span>
     </div>
   );
