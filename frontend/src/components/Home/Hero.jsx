@@ -2,7 +2,7 @@ import headphone from "../../assets/headphone.png";
 import ShopButton from "../UI/Buttons/ShopButton";
 import { Slide } from "react-awesome-reveal";
 
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -17,9 +17,9 @@ const Hero = () => {
             prices you can find. Shop now and get the best deals on the latest
             gadgets.
           </p>
-          <NavLink to="/shop">
+          <Link to="/shop">
             <ShopButton />
-          </NavLink>
+          </Link>
         </Slide>
       </div>
       <Slide duration={1300} triggerOnce direction="right">

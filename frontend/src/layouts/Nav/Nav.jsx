@@ -6,15 +6,11 @@ import CartDialog from "../Cart/CartDialog";
 
 import logo from "../../assets/logo.png";
 
-import { useSelector } from "react-redux";
-
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
-
-  const products = useSelector((state) => state.items);
 
   const menuHandler = () => {
     setMenuOpen(!menuOpen);
@@ -26,7 +22,7 @@ const Nav = () => {
 
   return (
     <>
-      <CartDialog open={cartOpen} setOpen={setCartOpen} products={products} />
+      <CartDialog open={cartOpen} setOpen={setCartOpen} />
 
       <nav className="bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-600">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">

@@ -1,5 +1,3 @@
-// create a basic cart with react redux toolkit
-
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const savedCartItems = localStorage.getItem("cart");
@@ -19,7 +17,6 @@ const cartSlice = createSlice({
   initialState: preloadedState,
   reducers: {
     addToCart(state, action) {
-      // check if the item is already in the cart
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item._id === newItem._id);
 
@@ -42,10 +39,10 @@ const cartSlice = createSlice({
     },
     removeOneItemFromCart(state, action) {
       const id = action.payload;
-      const existingItem = state.items.find((item) => item.id === id);
+      const existingItem = state.items.find((item) => item._id === id);
 
       if (existingItem.quantity === 1) {
-        state.items = state.items.filter((item) => item.id !== id);
+        state.items = state.items.filter((item) => item._id !== id);
       } else {
         existingItem.quantity--;
         existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
@@ -57,12 +54,12 @@ const cartSlice = createSlice({
 
     removeItemFromCart(state, action) {
       const id = action.payload;
-      const existingItem = state.items.find((item) => item.id === id);
+      const existingItem = state.items.find((item) => item._id === id);
 
       state.totalPrice -= existingItem.totalPrice;
       state.totalQuantity -= existingItem.quantity;
 
-      state.items = state.items.filter((item) => item.id !== id);
+      state.items = state.items.filter((item) => item._id !== id);
     },
   },
 });
