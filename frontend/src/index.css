@@ -70,10 +70,4 @@ body {
       display: none;
     }
   }
-
-  .logo {
-    background: linear-gradient(270deg, #ffffff, #4f46e5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 }

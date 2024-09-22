@@ -7,7 +7,9 @@ const app = express();
 
 const shopRoutes = require("./routes/shop");
 
-const mongoConnect = require("./database/database").mongoConnect;
+const mongoose = require("mongoose");
+
+require("dotenv").config();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -17,6 +19,9 @@ app.use(cors());
 
 app.use(shopRoutes);
 
-mongoConnect(() => {
-  app.listen(3000);
-});
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    app.listen(3000);
+  })
+  .catch((err) => console.log(err));

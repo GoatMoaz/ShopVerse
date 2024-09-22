@@ -1,7 +1,7 @@
 const Product = require("../models/product");
 
 module.exports.getProducts = (req, res, next) => {
-  Product.fetchAll()
+  Product.find()
     .then((products) => {
       return res.status(200).json({
         products,
@@ -33,7 +33,7 @@ module.exports.getProduct = (req, res, next) => {
 
 module.exports.getCategory = (req, res, next) => {
   const category = req.params.category;
-  Product.findByCategory(category)
+  Product.find({ category: category })
     .then((products) => {
       return res.status(200).json({
         products,

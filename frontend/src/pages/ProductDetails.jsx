@@ -1,12 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 
-
 import ProductImages from "../components/ProductDetails/ProductImages";
 import ProductContent from "../components/ProductDetails/ProductContent";
 
 const ProductDetailsPage = () => {
   const { product } = useLoaderData();
-
 
   return (
     <section className="bg-sky-50 py-24 px-4 h-full md:h-screen flex justify-center items-center md:px-0">
