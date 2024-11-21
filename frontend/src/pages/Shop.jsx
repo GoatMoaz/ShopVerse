@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import ErrorPage from "./Error";
 
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ShopPage = () => {
   const { products, loading, fetchProducts, error } = useFetchData();
@@ -31,6 +32,14 @@ const ShopPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Shop</title>
+        <meta
+          name="description"
+          content="Browse our wide selection of products."
+        />
+        <meta name="keywords" content="shop, products, ecommerce" />
+      </Helmet>
       <Header />
       {loading && <ProductsLoader />}
       {!loading && <Products products={products} category={category} />}

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles["footer-col"]}>
-            <h4>company</h4>
+            <h1>company</h1>
             <ul className="">
               <li>
                 <a href="#">about us</a>
@@ -23,7 +23,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className={styles["footer-col"]}>
-            <h4>get help</h4>
+            <h1>get help</h1>
             <ul>
               <li>
                 <a href="#">FAQ</a>
@@ -43,7 +43,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className={styles["footer-col"]}>
-            <h4>online shop</h4>
+            <h1>online shop</h1>
             <ul>
               <li>
                 <a href="#">watch</a>
@@ -60,18 +60,18 @@ const Footer = () => {
             </ul>
           </div>
           <div className={styles["footer-col"]}>
-            <h4>follow us</h4>
+            <h1>follow us</h1>
             <div className={styles["social-links"]}>
-              <a href="#">
+              <a href="#" aria-label="facebook">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#">
+              <a href="#" aria-label="twitter">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#">
+              <a href="#" aria-label="instagram">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#">
+              <a href="#" aria-label="linkedin">
                 <i className="fab fa-linkedin-in"></i>
               </a>
             </div>

@@ -9,6 +9,7 @@ const ContactInput = ({ label, type, textArea }) => {
       onInput={(e) => setValue(e.target.value)}
       rows="4"
       required
+      id={label}
     ></textarea>
   ) : (
     <input
@@ -16,6 +17,7 @@ const ContactInput = ({ label, type, textArea }) => {
       onInput={(e) => setValue(e.target.value)}
       type={type}
       autoComplete="off"
+      id={label}
       required
     />
   );
@@ -23,7 +25,7 @@ const ContactInput = ({ label, type, textArea }) => {
   return (
     <div className={styles["input-group"]}>
       {inputContent}
-      <label className={styles["user-label"]}>{label}</label>
+      <label className={styles["user-label"]} htmlFor={label}>{label}</label>
     </div>
   );
 };

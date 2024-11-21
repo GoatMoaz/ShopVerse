@@ -1,4 +1,5 @@
 const express = require("express");
+const compression = require("compression");
 const bodyParser = require("body-parser");
 const path = require("path");
 const cors = require("cors");
@@ -12,6 +13,8 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(compression());
 
 app.use(express.static(path.join(__dirname, "public")));
 

@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Cart from "../../components/UI/icons/Cart";
 import CartDialog from "../Cart/CartDialog";
 
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
 
 import { NavLink } from "react-router-dom";
 
@@ -26,25 +26,16 @@ const Nav = () => {
 
       <nav className="bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-600">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <NavLink to="/" className="flex items-center space-x-3 ">
-            <img src={logo} className="h-8" alt="Logo" />
+          <NavLink to="/" className="flex items-center space-x-3">
+            <img src={logo} className="h-8 w-8" alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
               ShopVerse
             </span>
           </NavLink>
-          <div className="flex items-center md:order-2 space-x-0 md:space-x-2">
+          <div className="flex items-center md:order-2">
             <button onClick={cartHandler}>
               <Cart />
             </button>
-            <NavLink to="/login">
-              <button
-                type="button"
-                className="text-white focus:ring-4 focus:outline-none hidden md:block font-medium rounded-lg text-sm px-4 py-2 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-              >
-                Get started
-              </button>
-            </NavLink>
-
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
@@ -71,11 +62,6 @@ const Nav = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="link">
-                  About us
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/shop" className="link">
                   Shop
                 </NavLink>
@@ -83,16 +69,6 @@ const Nav = () => {
               <li>
                 <NavLink to="/categories" className="link">
                   Categories
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/login">
-                  <button
-                    type="button"
-                    className="text-white focus:ring-4 focus:outline-none block md:hidden font-medium rounded-lg text-sm px-4 mx-2 mt-2 py-2 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-                  >
-                    Get started
-                  </button>
                 </NavLink>
               </li>
             </ul>

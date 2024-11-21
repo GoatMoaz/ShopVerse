@@ -20,6 +20,7 @@ const Products = ({ products, category }) => {
           <select
             className="border text-white text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 bg-gray-700 border-gray-600 md:w-1/4 sm:w-2/5"
             value={category}
+            aria-label="category"
             onChange={changeHandler}
           >
             <option>All</option>

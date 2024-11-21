@@ -1,4 +1,4 @@
-import headphone from "../../assets/headphone.png";
+import headphone from "../../assets/headphone.webp";
 import ShopButton from "../UI/Buttons/ShopButton";
 import { Slide } from "react-awesome-reveal";
 
@@ -30,6 +30,7 @@ const Hero = () => {
           src={headphone}
           alt="hero"
           className="w-full sm:w-5/6 mx-auto z-10 object-cover"
+          loading="lazy"
         />
       </Slide>
     </section>

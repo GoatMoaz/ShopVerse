@@ -17,13 +17,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.header {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3))
-      no-repeat fixed,
-    url(https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&w=5374&h=3583&dpr=1)
-      no-repeat center center fixed;
-  background-size: cover;
-}
 
 .image.slick-dots li {
   width: 90px;
