@@ -11,10 +11,10 @@ const useFetchData = () => {
       let response;
       if (category) {
         response = await fetch(
-          `http://localhost:3000/products/category/${category}`
+          `http://localhost:3000/api/products/category/${category}`
         );
       } else {
-        response = await fetch("https://shop-verse-theta.vercel.app/products");
+        response = await fetch("http://localhost:3000/api/products");
       }
       if (!response.ok) {
         setLoading(false);
