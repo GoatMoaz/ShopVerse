@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Hero from "../components/Home/Hero";
 import Features from "../components/Home/Features";
 import Categories from "../components/Home/Categories/Categories";
@@ -6,6 +7,10 @@ import BackToTop from "../components/UI/Buttons/BackToTop";
 import { Helmet } from "react-helmet";
 
 const HomePage = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  });
+
   return (
     <>
       <Helmet>

@@ -15,6 +15,7 @@ const CategoriesPage = () => {
   const { products } = useLoaderData();
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
     if (products) {
       setFurnituresProducts(
         products.filter((product) => product.category === "Furniture")

@@ -4,9 +4,9 @@ const ProductImages = ({ images }) => {
   const settings = {
     customPaging: function (i) {
       return (
-        <a>
+        <div>
           <img src={images[i]} alt="product" className="rounded-lg" />
-        </a>
+        </div>
       );
     },
     dots: true,

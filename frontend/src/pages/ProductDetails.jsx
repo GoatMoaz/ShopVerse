@@ -3,9 +3,14 @@ import { useLoaderData } from "react-router-dom";
 import ProductImages from "../components/ProductDetails/ProductImages";
 import ProductContent from "../components/ProductDetails/ProductContent";
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 
 const ProductDetailsPage = () => {
   const { product } = useLoaderData();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  });
 
   return (
     <>

@@ -17,6 +17,7 @@ const ShopPage = () => {
   const categoryParam = searchParams.get("category");
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
     if (categoryParam) {
       setCategory(categoryParam);
       fetchProducts(categoryParam);

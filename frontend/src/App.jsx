@@ -4,6 +4,7 @@ import HomePage from "./pages/Home";
 import ShopPage from "./pages/Shop";
 import ProductDetailsPage from "./pages/ProductDetails";
 import CategoriesPage from "./pages/Categories";
+import CheckoutPage from "./pages/Checkout";
 import ErrorPage from "./pages/Error";
 
 import Root from "./pages/Root";
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path: "/categories",
         element: <CategoriesPage />,
         loader: CategoriesLoader,
+      },
+      {
+        path: "/checkout",
+        element: <CheckoutPage />,
       },
     ],
   },
