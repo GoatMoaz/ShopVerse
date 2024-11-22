@@ -20,11 +20,16 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cors());
 
-app.use(shopRoutes);
+app.use("/api", shopRoutes);
+
+app.use((req, res, next) => {
+  res.status(404).send("Route not found");
+});
 
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
     app.listen(3000);
+    console.log("Connected")
   })
   .catch((err) => console.log(err));

@@ -14,7 +14,7 @@ const useFetchData = () => {
           `http://localhost:3000/products/category/${category}`
         );
       } else {
-        response = await fetch("http://localhost:3000/products");
+        response = await fetch("https://shop-verse-theta.vercel.app/products");
       }
       if (!response.ok) {
         setLoading(false);
