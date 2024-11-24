@@ -28,26 +28,10 @@ const Success = () => {
               </svg>
             </div>
             <div>
-              <p className="text-white">done successfully :)</p>
-              <p className="text-gray-500">This is the description section</p>
+              <p className="text-white">Product added successfully :)</p>
+              <p className="text-gray-500">Check your cart!</p>
             </div>
           </div>
-          <button className="text-gray-600 hover:bg-white/5 p-1 rounded-md transition-colors ease-linear">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
         </div>
       </div>
     </Slide>

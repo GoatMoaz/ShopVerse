@@ -38,7 +38,9 @@ const ProductDetailsPage = () => {
 export default ProductDetailsPage;
 
 export async function loader({ params }) {
-  const response = await fetch(`http://localhost:3000/products/${params.id}`);
+  const PRODUCTION_URL = import.meta.env.VITE_PRODUCTION_URL;
+
+  const response = await fetch(`${PRODUCTION_URL}/api/products/${params.id}`);
 
   if (!response.ok) {
     throw new Error("Failed to fetch product.");

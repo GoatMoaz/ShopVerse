@@ -18,7 +18,6 @@ const CheckoutPage = () => {
 
   const placeOrder = (e) => {
     e.preventDefault();
-    console.log("Placed!!");
     dispatch(cartActions.clearCart());
     setIsOrdered(true);
   };

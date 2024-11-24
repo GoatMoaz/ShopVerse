@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const PRODUCTION_URL = import.meta.env.VITE_PRODUCTION_URL;
+
 const useFetchData = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -11,10 +13,10 @@ const useFetchData = () => {
       let response;
       if (category) {
         response = await fetch(
-          `http://localhost:3000/api/products/category/${category}`
+          `${PRODUCTION_URL}/api/products/category/${category}`
         );
       } else {
-        response = await fetch("http://localhost:3000/api/products");
+        response = await fetch(`${PRODUCTION_URL}/api/products`);
       }
       if (!response.ok) {
         setLoading(false);
@@ -29,7 +31,10 @@ const useFetchData = () => {
       setProducts(data.products);
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      setError({
+        message: "Something went wrong.",
+        status: 500,
+      });
     }
   };
 
