@@ -6,7 +6,7 @@ import LineLoader from "../components/UI/Loaders/LineLoader";
 
 const Root = () => {
   const navigation = useNavigation();
-  const isNavigating = Boolean(navigation.location);
+  const isNavigating = navigation.state === "loading";
 
   return (
     <>

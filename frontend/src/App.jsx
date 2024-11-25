@@ -1,21 +1,27 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
-import HomePage from "./pages/Home";
-import ShopPage from "./pages/Shop";
-import ProductDetailsPage from "./pages/ProductDetails";
-import CategoriesPage from "./pages/Categories";
-import CheckoutPage from "./pages/Checkout";
-import ErrorPage from "./pages/Error";
+import { lazy, Suspense } from "react";
 
 import Root from "./pages/Root";
+import ErrorPage from "./pages/Error";
+
+const HomePage = lazy(() => import("./pages/Home"));
+const ShopPage = lazy(() => import("./pages/Shop"));
+const ProductDetailsPage = lazy(() => import("./pages/ProductDetails"));
+const CategoriesPage = lazy(() => import("./pages/Categories"));
+const CheckoutPage = lazy(() => import("./pages/Checkout"));
 
 import { loader as PDLoader } from "./pages/ProductDetails";
 import { loader as CategoriesLoader } from "./pages/Categories";
+import AppLoader from "./components/UI/Loaders/AppLoader";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: (
+      <Suspense fallback={<AppLoader />}>
+        <Root />
+      </Suspense>
+    ),
     errorElement: (
       <ErrorPage
         status={404}
@@ -23,9 +29,19 @@ const router = createBrowserRouter([
       />
     ),
     children: [
-      { path: "/", element: <HomePage /> },
-      { path: "/shop", element: <ShopPage /> },
-      { path: "/shop/:id", element: <ProductDetailsPage />, loader: PDLoader },
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/shop",
+        element: <ShopPage />,
+      },
+      {
+        path: "/shop/:id",
+        element: <ProductDetailsPage />,
+        loader: PDLoader,
+      },
       {
         path: "/categories",
         element: <CategoriesPage />,
