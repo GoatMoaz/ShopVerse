@@ -11,8 +11,9 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../store/store";
+import { Link } from "react-router-dom";
 
-export default function cartDialog({ open, setOpen }) {
+export default function CartDialog({ open, setOpen }) {
   const totalPrice = useSelector((state) => state.totalPrice);
   const products = useSelector((state) => state.items);
 
@@ -57,22 +58,37 @@ export default function cartDialog({ open, setOpen }) {
 
                   <div className="mt-8">
                     <div className="flow-root">
-                      <ul
-                        role="list"
-                        className="-my-6 divide-y divide-gray-200"
-                      >
-                        {products.map((product) => (
-                          <Product
-                            key={product._id}
-                            product={product}
-                            removeItemHandler={removeItemHandler}
-                          />
-                        ))}
-                      </ul>
+                      {products.length === 0 ? (
+                        <p className="text-center text-indigo-600">
+                          Your shopping cart looks empty
+                        </p>
+                      ) : (
+                        <ul
+                          role="list"
+                          className="-my-6 divide-y divide-gray-200"
+                        >
+                          {products.map((product) => (
+                            <Product
+                              key={product._id}
+                              product={product}
+                              removeItemHandler={removeItemHandler}
+                            />
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
                 </div>
-                <SubTotal totalPrice={totalPrice} setOpen={setOpen} />
+                {!!products.length ? (
+                  <SubTotal totalPrice={totalPrice} setOpen={setOpen} />
+                ) : (
+                  <Link
+                    to="/shop"
+                    className="flex items-center justify-center border border-transparent bg-indigo-950 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-black"
+                  >
+                    Start Shopping
+                  </Link>
+                )}
               </div>
             </DialogPanel>
           </div>
