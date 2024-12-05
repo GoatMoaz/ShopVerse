@@ -22,7 +22,7 @@ const HomePage = () => {
         <meta name="keywords" content="home, features, categories, contact" />
       </Helmet>
       <Hero />
-      <BackToTop />
+      {/* <BackToTop /> */}
       <Features />
       <Categories />
       <Contact />

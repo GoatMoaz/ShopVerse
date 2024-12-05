@@ -1,7 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
 
-import { Fade } from "react-awesome-reveal";
-
 const categories = [
   {
     title: "Furniture",
@@ -40,9 +38,7 @@ const AllCategories = () => {
 
   return (
     <section className="bg-slate-600 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-12 md:pt-14">
-      <Fade
-        triggerOnce
-        duration={700}
+      <div
         className="flex items-center justify-center bg-cover bg-center text-white h-screen col-span-2"
         style={{
           background: `linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)) no-repeat, url(https://images.pexels.com/photos/972804/pexels-photo-972804.jpeg?auto=compress&cs=tinysrgb&w=2533&h=3800&dpr=1)`,
@@ -66,13 +62,11 @@ const AllCategories = () => {
             Purchase Now!
           </NavLink>
         </div>
-      </Fade>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 col-span-2">
         {categories.map((category, index) => (
-          <Fade
-            triggerOnce
-            duration={700}
+          <div
             key={index}
             className="relative bg-cover bg-center h-[300px] cursor-pointer lg:h-full flex items-center justify-center"
             style={{
@@ -89,7 +83,7 @@ const AllCategories = () => {
                 <p className="text-lg">{category.description}</p>
               </div>
             </div>
-          </Fade>
+          </div>
         ))}
       </div>
     </section>
